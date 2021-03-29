@@ -15,6 +15,8 @@ Application to view the Earthquake data
 
 *	Clone the repo
 > git clone https://github.com/Siri8183/earthquake-zen-garden.git
-> npm install - To install dependencies
-> npm run start - To start and launch the application
+* install dependencies
+> npm install 
+*  start and launch the application
+> npm run start 
 
