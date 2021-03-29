@@ -19,4 +19,5 @@ Application to view the Earthquake data
 > npm install 
 *  start and launch the application
 > npm run start 
+* app will be launched at http://localhost:3000 
 
