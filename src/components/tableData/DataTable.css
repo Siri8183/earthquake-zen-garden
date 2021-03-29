@@ -1,0 +1,36 @@
+table {
+  border-spacing: 10px;
+  border: 1 px solid white;
+}
+
+.datatable {
+  /* font-size: 28px;
+  color: #ededed; */
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #ededed #777777  #444444 #0011bb #6600cc; */
+  text-align: center;
+}
+
+table {
+  table-layout: auto;
+  border-collapse: collapse;
+}
+th,
+td {
+  margin: 0;
+  padding: 0.2rem 4.25rem;
+}
+th {
+  text-align: center;
+}
+
+tr td {
+  text-align: left;
+  font-weight: bold;
+  color: #777777;
+}
