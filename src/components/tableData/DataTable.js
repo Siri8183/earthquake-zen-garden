@@ -29,7 +29,7 @@ const DataTable = ({ data }) => {
     []
   );
 
-  const { getTableProps, getTableBodyProps, headers, rows, prepareRow } = useTable(
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable(
     {
       columns,
       data,
@@ -37,42 +37,39 @@ const DataTable = ({ data }) => {
     useSortBy
   );
   return (
-    <>
-      <table className='datatable' {...getTableProps()}>
+    <div className='container'>
+      <table {...getTableProps()}>
         <thead>
-          <tr>
-            {headers.map((column) => {
-              return (
-                <th {...column.getHeaderProps()}>
+          {headerGroups.map((headerGroup) => (
+            <tr {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column) => (
+                <td className='heading' {...column.getHeaderProps()}>
                   <span {...column.getSortByToggleProps()} onClick={() => (column.isSortedDesc ? column.toggleSortBy(false, false) : column.toggleSortBy(true, false))}>
                     {column.render('Header')}
                   </span>
-                </th>
-                // <th {...column.getHeaderProps()}>
-                //   <tr>
-                //     <td {...column.getSortByToggleProps()} onClick={() => (column.isSortedDesc ? column.toggleSortBy(false, false) : column.toggleSortBy(true, false))}>
-                //       {column.render('Header')}
-                //     </td>
-                //   </tr>
-                // </th>
-              );
-            })}
-          </tr>
+                </td>
+              ))}
+            </tr>
+          ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row, i) => {
+          {rows.map((row) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => {
-                  return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
+                  return (
+                    <td className='td' {...cell.getCellProps()}>
+                      {cell.render('Cell')}
+                    </td>
+                  );
                 })}
               </tr>
             );
           })}
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 

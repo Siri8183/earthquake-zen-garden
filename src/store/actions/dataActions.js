@@ -12,26 +12,6 @@ export const fetchDataSuccess = (data) => {
     payload: data,
   };
 };
-
-export const fetchDataFailure = (error) => {
-  return {
-    type: actionTypes.FETCH_DATA_FAILURE,
-    payload: error,
-  };
-};
-
-export const fetchUserDataSuccess = (data) => {
-  return {
-    type: actionTypes.FETCH_USER_DATA_SUCCESS,
-    payload: data,
-  };
-};
-export const fetchEqDataSuccess = (data) => {
-  return {
-    type: actionTypes.FETCH_EQ_DATA_SUCCESS,
-    payload: data,
-  };
-};
 export const fetchData = () => {
   return (dispatch) => {
     dispatch(fetchDataStart());
@@ -43,6 +23,12 @@ export const fetchData = () => {
         return json;
       })
       .catch((error) => dispatch(fetchDataFailure(error)));
+  };
+};
+export const fetchDataFailure = (error) => {
+  return {
+    type: actionTypes.FETCH_DATA_FAILURE,
+    payload: error,
   };
 };
 
@@ -59,6 +45,21 @@ export const fetchUserData = () => {
       .catch((error) => dispatch(fetchDataFailure(error)));
   };
 };
+
+export const fetchUserDataSuccess = (data) => {
+  return {
+    type: actionTypes.FETCH_USER_DATA_SUCCESS,
+    payload: data,
+  };
+};
+
+export const fetchEqDataSuccess = (data) => {
+  return {
+    type: actionTypes.FETCH_EQ_DATA_SUCCESS,
+    payload: data,
+  };
+};
+
 export const fetchEqDetailById = (id) => {
   return (dispatch) => {
     dispatch(fetchDataStart());

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/dataActions';
 import Loading from '../shared/Loading';
-import DataTable from '../tableData/DataTable';
+import DataTable from '../TableData/DataTable';
 import Title from '../shared/Title';
 
 class EarthquakesData extends Component {

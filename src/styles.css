@@ -33,12 +33,6 @@ body {
   width: 100%;
 }
 
-@media only screen and (max-width: 600px) {
-  .avatar {
-    width: 50%;
-  }
-}
-
 .container {
   position: relative;
   display: flex;

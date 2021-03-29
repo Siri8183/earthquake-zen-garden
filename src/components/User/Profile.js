@@ -11,11 +11,11 @@ const Profile = ({ userData }) => {
   if (!!userData) {
     return (
       <div className='container'>
-        <div className='row  justify-content-between'>
-          <div className='col-md-2'>
+        <div className='row' style={{ width: '50%' }}>
+          <div className='col-md-4'>
             <img className='avatar' src={userData.avatarImage} alt='profile' />
           </div>
-          <div className='col-md-10 '>
+          <div className='col-md-8 '>
             <div className='row'>
               <div className='col-md-4'>
                 <div className='row label'>First Name</div>
